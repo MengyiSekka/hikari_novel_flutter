@@ -9,7 +9,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-
+ - name: 清理旧编译缓存
+        run: flutter clean
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
