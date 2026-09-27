@@ -1,4 +1,5 @@
 name: Build Android APK
+
 on:
   push:
     branches: [ main ]
@@ -6,12 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows‑latest
     steps:
       - uses: actions/checkout@v4
- - name: 清理旧编译缓存
+
+      - name: 清理旧编译缓存
         run: flutter clean
-      - name: Setup Flutter
+
+      - name: 设置 Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.44.8'
@@ -30,5 +33,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: App-APK
+          name: App‑APK
           path: build/app/outputs/flutter-apk/app-release.apk
